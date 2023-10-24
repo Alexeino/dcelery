@@ -139,6 +139,10 @@ CELERY_RESULT_SERIALIZER = 'json'
 MEDIA_URL = "/folder/"
 MEDIA_ROOT = os.path.join(BASE_DIR,"media")
 
+
+# Cropped Media files
+MEDIA_CROPPED_URL = "/cropped/"
+MEDIA_CROPPED_ROOT = os.path.join(BASE_DIR,"cropped_files")
 # Email Settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'localhost'  # MailHog runs locally

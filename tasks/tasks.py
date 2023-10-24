@@ -18,10 +18,15 @@ def crop_file(file_path,filename):
             os.makedirs(OUTPUT_FOLDER_PATH)
         img.save(os.path.join(OUTPUT_FOLDER_PATH,"thumbnail_"+filename))
         
+        # Generating Image url to sent via email...
+        cropped_image_url = os.path.join(settings.MEDIA_CROPPED_URL,"thumbnail_"+filename)
+        print("Cropped image :",cropped_image_url)
+        
+        
         # If task is completed send the email
         send_email(
-            subject="Image has been Cropped",
-            message="You image has been cropped and saved.",
+            subject="Image has been Cropped! Download Now",
+            message=f"You image has been cropped and saved. Click here to download http://localhost:8000{cropped_image_url}",
             from_email="admin@test.com",
             recipient_list=["recipent@example.com"]
         )

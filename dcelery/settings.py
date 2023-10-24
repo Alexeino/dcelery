@@ -138,3 +138,10 @@ CELERY_RESULT_SERIALIZER = 'json'
 
 MEDIA_URL = "/folder/"
 MEDIA_ROOT = os.path.join(BASE_DIR,"media")
+
+# Email Settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'localhost'  # MailHog runs locally
+EMAIL_PORT = 1025  # MailHog SMTP port
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = False

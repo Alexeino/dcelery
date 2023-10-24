@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'worker',
+    'files',
 ]
 
 MIDDLEWARE = [
@@ -134,3 +134,7 @@ CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'  # Optional for result storag
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
+
+
+MEDIA_URL = "/folder/"
+MEDIA_ROOT = os.path.join(BASE_DIR,"media")
